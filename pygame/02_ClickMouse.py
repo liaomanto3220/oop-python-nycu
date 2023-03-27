@@ -16,22 +16,22 @@ dot = pygame.image.load('./img/dot.png').convert_alpha()
 #resize image
 width = dot.get_width()
 height = dot.get_height()
-dot_resize = pygame.transform.scale(dot, (width*0.01, height*0.01))
+dot_resize = pygame.transform.scale(dot, (width * 0.01, height * 0.01))
 
 #game loop
-run = True
-while run:
-    screen.fill((0,0,0))
+is_runnung = True
+while is_runnung:
+    screen.fill((0, 0, 0))
 
     #event handler
     for event in pygame.event.get():
         #quit game
         if event.type == pygame.QUIT:
-            run = False
+            is_runnung = False
         if event.type == pygame.MOUSEBUTTONUP:
             mouseX, mouseY = event.pos
-            print(f'X:{mouseX},Y:{mouseY}')
-            screen.blit(dot_resize,(mouseX,mouseY))  
+            print(f'X:{mouseX}, Y:{mouseY}')
+            screen.blit(dot_resize, (mouseX, mouseY))  
 
     pygame.display.update()
     clock.tick(FRAMES_PER_SECOND)
